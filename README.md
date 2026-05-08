@@ -12,6 +12,20 @@
 
 Whether you are walking through a city automatically uploading shots from your phone to Google Drive, or syncing bulk raw files to a Cloudflare R2 bucket, OmniLens detects new uploads instantly, extracts EXIF metadata (size, resolution, camera make), and compiles a unified, searchable database of all your assets—regardless of where they are physically stored.
 
+```
+omnilens/
+├── main.py                  # Main FastAPI application and webhook endpoints
+├── requirements.txt         # Python dependencies
+├── .env.example             # Environment variables template
+├── providers/
+│   ├── __init__.py
+│   ├── google_drive.py      # Google Drive API and metadata extractor
+│   └── s3_storage.py        # Cloudflare R2 / Backblaze B2 API + Range Requests
+└── utils/
+    ├── __init__.py
+    └── image_processor.py   # Pillow EXIF and byte parsing
+```
+
 ---
 
 ## ✨ Features
